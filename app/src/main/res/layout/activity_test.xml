@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.agehua.horizontalcoordinatordemo.HorizontalCoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/coordinator"
+    android:orientation="horizontal">
+
+    <com.agehua.horizontalcoordinatordemo.HorizontalAppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="160dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/holo_blue_bright">
+
+        <com.agehua.horizontalcoordinatordemo.HorizontalCollapsingToolbarLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            <TextView
+                android:layout_width="160dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark"
+                android:text="appbarLayout text1"
+                android:textColor="@android:color/white" />
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorAccent"
+                android:text="appbarLayout text2"
+                android:textColor="@android:color/white"
+                app:layout_collapseMode="pin"
+                android:layout_gravity="right|center_vertical"/>
+
+        </com.agehua.horizontalcoordinatordemo.HorizontalCollapsingToolbarLayout>
+    </com.agehua.horizontalcoordinatordemo.HorizontalAppBarLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/list_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="#1d9d29"
+        app:layout_behavior="com.agehua.horizontalcoordinatordemo.HorizontalAppBarLayout$ScrollingViewBehavior">
+
+    </android.support.v7.widget.RecyclerView>
+
+</com.agehua.horizontalcoordinatordemo.HorizontalCoordinatorLayout>
